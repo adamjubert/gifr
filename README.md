@@ -23,7 +23,8 @@ Users can remove the last gif and remove all gifs from the screen. There are als
 * Add a clickable link to each gif
 * Expand gif size and only display one per row
 
-``` function toggleZoom() {
+```
+function toggleZoom() {
   $ds('#action-zoom').toggleClass("selected");
   $ds('.gif').toggleClass("zoom");
 }
