@@ -27,8 +27,8 @@ function addRowOfGifs() {
 }
 
 function addSingleGif(tag = "dog") {
-  let lastRowLength = $d('.gif-wrapper').last().length();
-  if ( lastRowLength  === 4 || lastRowLength === 0 ) {
+  let lastRow = $d('.gif-wrapper').last();
+  if ( lastRow.children().length()  === 4 || lastRow.length() === 0 ) {
     $d('.gif-wrapper').append('<div class="row"></div>');
   }
   fetchGif(tag)
@@ -75,8 +75,9 @@ function removeDescription() {
 }
 
 function removeLastGif() {
-  $d('.gif-wrapper').children().last().remove();
-  if ($d('.row').last().length() === 0) {
+  if ( $d('.gif-wrapper').last().children().length() === 1 ) {
+    $d('.gif-wrapper').last().remove();
+  } else {
     $d('.row').last().remove();
   }
 }
