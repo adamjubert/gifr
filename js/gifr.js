@@ -28,7 +28,6 @@ function addRowOfGifs() {
 
 function addSingleGif(tag = "dog") {
   let lastRowLength = $d('.gif-wrapper').last().length();
-  debugger
   if ( lastRowLength  === 4 || lastRowLength === 0 ) {
     $d('.gif-wrapper').append('<div class="row"></div>');
   }
@@ -54,15 +53,21 @@ function whichToAdd(item) {
       return "Sends an AJAX request to the giphy API and appends the received gif to the last child";
     case 'remove':
       return "Removes the last element with class 'gif' from the screen";
+    case 'removeAll':
+      return "Removes all elements with class 'row' (and therefore, all gifs) from the screen";
     case 'zoom':
       return "Toggles a class that adds a 'transform: scale(1.2)' property on hover";
     case 'click':
-      return "Toggles an on click event handler opens the image's url in a new window";
+      return "Toggles an on-click event handler that opens the image's url in a new window";
     case 'mobile':
-      return "Toggles a class that adds a flex-direction of column to each row and increases width and height ";
+      return "Toggles a class that adds a 'flex-direction: column' property to each row and increases image width and height ";
     default:
       return "";
   }
+}
+
+function removeAllGifs() {
+  $d(".row").remove();
 }
 
 function removeDescription() {
@@ -71,7 +76,6 @@ function removeDescription() {
 
 function removeLastGif() {
   $d('.gif-wrapper').children().last().remove();
-  debugger
   if ($d('.row').last().length() === 0) {
     $d('.row').last().remove();
   }

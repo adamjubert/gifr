@@ -19,11 +19,9 @@
         </div>
 
         <div class="nav-right">
-          <!-- <form onsubmit="searchForGifs(); return false;"> -->
           <input id="search-form" type="text"
             onkeydown="if (event.keyCode == 13) { searchForGif() }" />
             <i class="fa fa-search" aria-hidden="true"></i>
-          <!-- </form> -->
           <a href="#" class="btn-nav trans" onclick="searchForGif();">Search</a>
         </div>
       </div>
@@ -37,6 +35,9 @@
         <a onclick="removeLastGif()"
            onmouseover="addDescription('remove')"
            onmouseout="removeDescription()">Remove Last Gif</a>
+       <a onclick="removeAllGifs()"
+          onmouseover="addDescription('removeAll')"
+          onmouseout="removeDescription()">Remove All Gifs</a>
         <a id="action-zoom"
            onclick="toggleZoom()"
            onmouseover="addDescription('zoom')"
