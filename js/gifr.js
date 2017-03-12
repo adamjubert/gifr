@@ -9,10 +9,11 @@ function addClasses() {
 }
 
 function addGifToRow(data) {
-  const url = JSON.parse(data).data.image_url;
-  // const secureUrl = [url.slice(0, 4), 's', url.slice(4)].join('');
-  // debugger
-  const img = `<img class="${ addClasses() }" src="${ url }" />`;
+  let url = JSON.parse(data).data.image_url;
+  if (url.split("")[4] !== 's') { // ensure image is https
+    url = [url.slice(0, 4), 's', url.slice(4)].join('');
+  }
+  let img = `<img class="${ addClasses() }" src="${ url }" />`;
   $d('.gif-wrapper').last().append(img)
 }
 
