@@ -42,7 +42,7 @@ function searchForGif() {
 function fetchGif(tag) {
   $d.ajax({
     method: 'GET',
-    url: `http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=${tag}&rating=g`,
+    url: `https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=${tag}&rating=g`,
     success: data => addGifToRow(data)
   });
 }
