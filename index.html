@@ -13,42 +13,50 @@
       <div class="wrapper nav-wrapper">
         <div class="nav-left">
           <a href="#"><h3>gifr</h3></a>
-          <a href="http://adamjubert.com" target="_blank">Website</a>
+          <a href="http://adamjubert.com" target="_blank">Profile</a>
           <a href="https://linkedin.com/in/adamjubert" target="blank">LinkedIn</a>
+          <a href="https://github.com/adamjubert" target="blank">Github</a>
         </div>
 
         <div class="nav-right">
-          <!-- <form onsubmit="searchForGifs(); return false;">
-            <input type="text" name="" value="" id="search-form">
-              <p>X</p>
-            </input>
-          </form> -->
-          <a href="" class="btn-nav trans">View Source Code</a>
-
+          <!-- <form onsubmit="searchForGifs(); return false;"> -->
+          <input id="search-form" type="text"
+            onkeydown="if (event.keyCode == 13) { searchForGif() }" />
+            <i class="fa fa-search" aria-hidden="true"></i>
+          <!-- </form> -->
+          <a href="#" class="btn-nav trans" onclick="searchForGif();">Search</a>
         </div>
       </div>
     </nav>
 
     <aside>
       <div class="wrapper actions">
-        <!-- <a onclick="addGif()">Add Gif</a>
-        <a onclick="removeGif()">Remove Gif</a> -->
-        <a onclick="addRowOfGifs()">Add Row</a>
-        <a onclick="removeRow()">Remove Row</a>
-        <a onclick="toggleZoom()" id="action-zoom">Zoom On Hover</a>
-        <a onclick="toggleClickableGifs()" id="action-clickable">Clickable Gifs</a>
-        <a onclick="toggleMobile()" id="action-mobile">Mobile Friendly</a>
+        <a onclick="addSingleGif()"
+           onmouseover="addDescription('add')"
+           onmouseout="removeDescription()">Add Dog Gif</a>
+        <a onclick="removeLastGif()"
+           onmouseover="addDescription('remove')"
+           onmouseout="removeDescription()">Remove Last Gif</a>
+        <a id="action-zoom"
+           onclick="toggleZoom()"
+           onmouseover="addDescription('zoom')"
+           onmouseout="removeDescription()">Zoom On Hover</a>
+        <a id="action-clickable"
+           onclick="toggleClickableGifs()"
+           onmouseover="addDescription('click')"
+           onmouseout="removeDescription()">Clickable Gifs</a>
+        <a id="action-mobile"
+           onclick="toggleMobile()"
+           onmouseover="addDescription('mobile')"
+           onmouseout="removeDescription()">Larger Images</a>
       </div>
+      <div class="action-description">
+
+      <div>
     </aside>
 
     <section>
       <div class="wrapper gif-wrapper">
-        <!-- <div class="row">
-          <img src="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=dog&rating=g" class="gif"/>
-          <img src="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=dog&rating=g" class="gif"/>
-          <img src="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=dog&rating=g" class="gif"/>
-          <img src="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=dog&rating=g" class="gif"/>
-        </div> -->
       </div>
     </section>
     <div ></div>

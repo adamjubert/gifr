@@ -46,11 +46,11 @@ a {
   transition: 0.3s;
 }
 
+
 nav {
   width: 100%;
   background: rgba(21,21,23,.95);
   color: white;
-
 }
 
 nav > * > * {
@@ -75,7 +75,7 @@ nav .wrapper {
 }
 
 .nav-left a {
-  margin-right: 20px;
+  margin-right: 40px;
   transition: 0.3s;
 
 }
@@ -89,11 +89,12 @@ nav .wrapper {
 .nav-right {
   display: flex;
   justify-content: flex-end;
+  position: relative;
 }
 
 .btn-nav {
   background-color: #128fdc;
-  padding: 6px 10px;
+  padding: 8px 12px;
   border-radius: 4px;
   font-weight: 600;
 }
@@ -106,6 +107,33 @@ nav h3 {
   font-size: 30px;
   font-weight: 700;
 }
+
+#search-form {
+  padding: 6px 6px 6px 26px;
+  margin-right: 12px;
+  width: 200px;
+  border-radius: 2px;
+  border: none;
+  font-size: 14px;
+  background: lightgrey;
+
+  transition: 0.2s;
+}
+
+#search-form:focus {
+  outline: none;
+  /*width: 250px;*/
+  transition: 0.2s;
+  background: white;
+}
+
+.fa-search {
+  position: absolute;
+  color: #444;
+  left: 4px;
+}
+
+/* Aside */
 
 aside .actions {
   display: flex;
@@ -122,6 +150,23 @@ aside .actions a:hover {
   border-bottom: 3px solid #128fdc;
   color: #000;
 }
+
+aside .action-description {
+  height: 50px;
+  border-top: 1px solid lightgrey;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+aside .action-description p {
+  margin-top: 14px;
+  text-align: center;
+  color: #898989;
+  transition: 1s;
+}
+
+
+/*** Section ***/
 
 section {
   background-color: #f3f5f6;

@@ -136,8 +136,9 @@ class DomSawyer {
   }
 
   elements() {
-    this.htmlElements;
+    return this.htmlElements;
   }
+
 
   empty() {
     this.each((el) => (el.innerHTML = ""));
