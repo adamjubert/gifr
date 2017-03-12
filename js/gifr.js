@@ -9,8 +9,9 @@ function addClasses() {
 }
 
 function addGifToRow(data) {
-  const giphy = JSON.parse(data).data;
-  const img = `<img class="${ addClasses() }" src="${giphy.image_original_url}" />`;
+  const url = JSON.parse(data).data.image_url;
+  const secureUrl = [url.slice(0, 4), 's', url.slice(4)].join('')
+  const img = `<img class="${ addClasses() }" src="${ secureUrl }" />`;
   $d('.gif-wrapper').last().append(img)
 }
 
