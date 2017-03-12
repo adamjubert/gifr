@@ -14,7 +14,7 @@ function addGifToRow(data) {
     url = [url.slice(0, 4), 's', url.slice(4)].join('');
   }
   let img = `<img class="${ addClasses() }" src="${ url }" />`;
-  $ds('.gif-wrapper').last().append(img)
+  $ds('.gif-wrapper').last().append(img);
 }
 
 function addDescription(item) {
@@ -70,9 +70,9 @@ function whichToAdd(item) {
 }
 
 function removeAllGifs() {
-  if ( $ds('.gif').hasClass("gif-mobile") ) { toggleMobile() }
-  if ( $ds('.gif').hasClass("cursor") ) { toggleClickableGifs() }
-  if ( $ds('.gif').hasClass("zoom") ) { toggleZoom() }
+  if ( $ds('.gif').hasClass("gif-mobile") ) { toggleMobile(); }
+  if ( $ds('.gif').hasClass("cursor") ) { toggleClickableGifs(); }
+  if ( $ds('.gif').hasClass("zoom") ) { toggleZoom(); }
   $ds(".row").remove();
 }
 
