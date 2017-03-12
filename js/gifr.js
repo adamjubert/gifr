@@ -1,10 +1,8 @@
 function addClasses() {
   let classes = "gif";
-  if ($ds('.gif').length() > 0 ) {
-    if ( $ds('.gif').hasClass("gif-mobile") ) { classes += " gif-mobile"; }
-    if ( $ds('.gif').hasClass("cursor") ) { classes += " cursor"; }
-    if ( $ds('.gif').hasClass("zoom") ) { classes += " zoom"; }
-  }
+  if ( $ds('#action-mobile').hasClass("selected") ) { classes += " gif-mobile"; }
+  if ( $ds('#action-clickable').hasClass("selected") ) { classes += " cursor"; }
+  if ( $ds('#action-zoom').hasClass("selected") ) { classes += " zoom"; }
   return classes;
 }
 
@@ -21,7 +19,6 @@ function addDescription(item) {
   let text = whichToAdd(item);
   $ds(".action-description").append(`<p>${text}</p>`);
 }
-
 
 function addRowOfGifs() {
   for (var i = 0; i < 4; i++) {
@@ -70,9 +67,7 @@ function whichToAdd(item) {
 }
 
 function removeAllGifs() {
-  if ( $ds('.gif').hasClass("gif-mobile") ) { toggleMobile(); }
-  if ( $ds('.gif').hasClass("cursor") ) { toggleClickableGifs(); }
-  if ( $ds('.gif').hasClass("zoom") ) { toggleZoom(); }
+  if ( $ds('.gif').length() === 0 ) { return; }
   $ds(".row").remove();
 }
 
@@ -81,11 +76,16 @@ function removeDescription() {
 }
 
 function removeLastGif() {
+  if ( $ds('.gif').length() === 0 ) { return; }
   if ( $ds('.gif-wrapper').last().children().length() === 1 ) {
     $ds('.gif-wrapper').last().remove();
   } else {
     $ds('.row').last().remove();
   }
+}
+
+function noGifsOnScreen() {
+  return ( $ds('.gif').length() === 0 );
 }
 
 function removeRow() {

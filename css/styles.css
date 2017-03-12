@@ -212,8 +212,8 @@ section {
 }
 
 .row-mobile {
-  flex-direction:column;
-  text-align: center;
+  flex-direction: column;
+  text-align: center !important;
 }
 
 .gif-mobile {
