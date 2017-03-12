@@ -3,7 +3,7 @@ const DomSawyer = require('./dom_node_collection');
 const _eventQueue = [];
 let _docReady = false;
 
-window.$d = (arg) => {
+window.$ds = (arg) => {
   switch(typeof arg) {
     case "function":
       return registerDocReadyCallback(arg);
@@ -16,7 +16,7 @@ window.$d = (arg) => {
   }
 };
 
-$d.extend = (...args) => {
+$ds.extend = (...args) => {
   const firstObject = args[0];
   args.slice(1).forEach(arg => {
     Object.keys(arg).forEach(key => {
@@ -28,7 +28,7 @@ $d.extend = (...args) => {
 
 
 
-$d.ajax = function (options) {
+$ds.ajax = function (options) {
 
   return new Promise( (resolve, reject) => {
     const defaults = {
@@ -40,7 +40,7 @@ $d.ajax = function (options) {
       error: () => {},
       dataType: 'jsonp'
     };
-    $d.extend(defaults, options);
+    $ds.extend(defaults, options);
 
     const xhr = new XMLHttpRequest();
     xhr.open(defaults.method, defaults.url);

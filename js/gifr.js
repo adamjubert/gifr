@@ -1,9 +1,9 @@
 function addClasses() {
   let classes = "gif";
-  if ($d('.gif').length() > 0 ) {
-    if ( $d('.gif').hasClass("gif-mobile") ) { classes += " gif-mobile"; }
-    if ( $d('.gif').hasClass("cursor") ) { classes += " cursor"; }
-    if ( $d('.gif').hasClass("zoom") ) { classes += " zoom"; }
+  if ($ds('.gif').length() > 0 ) {
+    if ( $ds('.gif').hasClass("gif-mobile") ) { classes += " gif-mobile"; }
+    if ( $ds('.gif').hasClass("cursor") ) { classes += " cursor"; }
+    if ( $ds('.gif').hasClass("zoom") ) { classes += " zoom"; }
   }
   return classes;
 }
@@ -14,12 +14,12 @@ function addGifToRow(data) {
     url = [url.slice(0, 4), 's', url.slice(4)].join('');
   }
   let img = `<img class="${ addClasses() }" src="${ url }" />`;
-  $d('.gif-wrapper').last().append(img)
+  $ds('.gif-wrapper').last().append(img)
 }
 
 function addDescription(item) {
   let text = whichToAdd(item);
-  $d(".action-description").append(`<p>${text}</p>`);
+  $ds(".action-description").append(`<p>${text}</p>`);
 }
 
 
@@ -30,20 +30,20 @@ function addRowOfGifs() {
 }
 
 function addSingleGif(tag = "dog") {
-  let lastRow = $d('.gif-wrapper').last();
+  let lastRow = $ds('.gif-wrapper').last();
   if ( lastRow.children().length()  === 4 || lastRow.length() === 0 ) {
-    $d('.gif-wrapper').append('<div class="row"></div>');
+    $ds('.gif-wrapper').append('<div class="row"></div>');
   }
-  fetchGif(tag)
+  fetchGif(tag);
 }
 
 function searchForGif() {
-  let query = $d("#search-form").elements()[0].value;
+  let query = $ds("#search-form").elements()[0].value;
   addSingleGif(query);
 }
 
 function fetchGif(tag) {
-  $d.ajax({
+  $ds.ajax({
     method: 'GET',
     url: `https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=${tag}&rating=g`,
     success: data => addGifToRow(data)
@@ -70,46 +70,46 @@ function whichToAdd(item) {
 }
 
 function removeAllGifs() {
-  if ( $d('.gif').hasClass("gif-mobile") ) { toggleMobile() }
-  if ( $d('.gif').hasClass("cursor") ) { toggleClickableGifs() }
-  if ( $d('.gif').hasClass("zoom") ) { toggleZoom() }
-  $d(".row").remove();
+  if ( $ds('.gif').hasClass("gif-mobile") ) { toggleMobile() }
+  if ( $ds('.gif').hasClass("cursor") ) { toggleClickableGifs() }
+  if ( $ds('.gif').hasClass("zoom") ) { toggleZoom() }
+  $ds(".row").remove();
 }
 
 function removeDescription() {
-  $d(".action-description").children().remove();
+  $ds(".action-description").children().remove();
 }
 
 function removeLastGif() {
-  if ( $d('.gif-wrapper').last().children().length() === 1 ) {
-    $d('.gif-wrapper').last().remove();
+  if ( $ds('.gif-wrapper').last().children().length() === 1 ) {
+    $ds('.gif-wrapper').last().remove();
   } else {
-    $d('.row').last().remove();
+    $ds('.row').last().remove();
   }
 }
 
 function removeRow() {
-  $d('.gif').last().remove();
+  $ds('.gif').last().remove();
 }
 
 function toggleClickableGifs() {
-  $d('#action-clickable').toggleClass("selected");
-  $d('.gif').toggleClass("cursor");
-  if ( $d('.gif').hasClass("cursor") ) {
-    $d('.gif').on("click", ((e) => window.open(e.target.src, '_blank') ));
+  $ds('#action-clickable').toggleClass("selected");
+  $ds('.gif').toggleClass("cursor");
+  if ( $ds('.gif').hasClass("cursor") ) {
+    $ds('.gif').on("click", ((e) => window.open(e.target.src, '_blank') ));
   } else {
-    $d('.gif').off("click");
+    $ds('.gif').off("click");
   }
 }
 
 function toggleMobile() {
-  $d('.row').toggleClass("row-mobile");
-  $d('.gif').toggleClass("gif-mobile");
-  $d('.wrapper').toggleClass("wrapper-mobile");
-  $d('#action-mobile').toggleClass("selected");
+  $ds('.row').toggleClass("row-mobile");
+  $ds('.gif').toggleClass("gif-mobile");
+  $ds('.wrapper').toggleClass("wrapper-mobile");
+  $ds('#action-mobile').toggleClass("selected");
 }
 
 function toggleZoom() {
-  $d('#action-zoom').toggleClass("selected");
-  $d('.gif').toggleClass("zoom");
+  $ds('#action-zoom').toggleClass("selected");
+  $ds('.gif').toggleClass("zoom");
 }
