@@ -19,7 +19,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, sans-serif
+  font-family: "Helvetica Neue", Helvetica, sans-serif
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -48,8 +48,13 @@ a {
 
 nav {
   width: 100%;
-  background: black;
+  background: rgba(21,21,23,.95);
   color: white;
+
+}
+
+nav > * > * {
+  align-items: center;
 
 }
 
@@ -60,13 +65,28 @@ nav {
 
 nav .wrapper {
   padding: 10px;
-
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-.nav-links {
+.nav-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-left a {
+  margin-right: 20px;
+  transition: 0.3s;
+
+}
+
+.nav-left a:hover {
+  cursor: pointer;
+  color: #bbb;
+  transition: 0.3s;
+}
+
+.nav-right {
   display: flex;
   justify-content: flex-end;
 }
@@ -131,11 +151,15 @@ section {
   height: 450px !important;
 }
 
-.frame {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  border: 5px solid black;
+.zoom {
+  transition: 0.3s;
+
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .cursor:hover {
@@ -144,10 +168,12 @@ section {
 
 .row-mobile {
   flex-direction:column;
+  text-align: center;
 }
 
 .gif-mobile {
   margin-bottom: 40px !important;
+
   width: 80% !important;
   height: 80% !important;
 }

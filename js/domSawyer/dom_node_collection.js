@@ -19,6 +19,10 @@ class DomSawyer {
     return this.htmlElements[0].classList.contains(className);
   }
 
+  classList(className) {
+    return this.htmlElements[0].classList;
+  }
+
 
 
 

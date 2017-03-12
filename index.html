@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>gifr | Adam Jubert</title>
+    <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script type="text/javascript" src="domSawyer.js"></script>
     <script type="text/javascript" src="js/gifr.js"></script>
@@ -10,15 +11,20 @@
   <body onload="addRowOfGifs()">
     <nav>
       <div class="wrapper nav-wrapper">
-        <h3>gifr</h3>
+        <div class="nav-left">
+          <a href="#"><h3>gifr</h3></a>
+          <a href="http://adamjubert.com" target="_blank">Website</a>
+          <a href="https://linkedin.com/in/adamjubert" target="blank">LinkedIn</a>
+        </div>
 
-        <div class="nav-links">
+        <div class="nav-right">
           <!-- <form onsubmit="searchForGifs(); return false;">
             <input type="text" name="" value="" id="search-form">
               <p>X</p>
             </input>
           </form> -->
           <a href="" class="btn-nav trans">View Source Code</a>
+
         </div>
       </div>
     </nav>
@@ -29,7 +35,7 @@
         <a onclick="removeGif()">Remove Gif</a> -->
         <a onclick="addRowOfGifs()">Add Row</a>
         <a onclick="removeRow()">Remove Row</a>
-        <a onclick="toggleFrames()" id="action-frames">Toggle Frames</a>
+        <a onclick="toggleZoom()" id="action-zoom">Zoom On Hover</a>
         <a onclick="toggleClickableGifs()" id="action-clickable">Clickable Gifs</a>
         <a onclick="toggleMobile()" id="action-mobile">Mobile Friendly</a>
       </div>
