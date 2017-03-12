@@ -1,0 +1,165 @@
+/*** RESET ***/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, sans-serif
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+
+/*** MAIN ***/
+
+.trans {
+  transition: 0.3s;
+}
+
+nav {
+  width: 100%;
+  background: black;
+  color: white;
+
+}
+
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+nav .wrapper {
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-nav {
+  background-color: #128fdc;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.btn-nav:hover {
+  background-color: #006dac;
+}
+
+nav h3 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+aside .actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+aside .actions a {
+  padding: 20px;
+  border-bottom: 3px solid #fff;
+  color: #444;
+}
+
+aside .actions a:hover {
+  border-bottom: 3px solid #128fdc;
+  color: #000;
+}
+
+section {
+  background-color: #f3f5f6;
+  min-height: 800px;
+  padding: 40px 0;
+}
+
+
+.row {
+  margin: 2px 0;
+  width: 100%;
+  display: block;
+}
+
+.row img {
+  width: 24.5%;
+  height: 250px;
+  margin: 0 0.25%;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.big {
+  width: 450px !important;
+  height: 450px !important;
+}
+
+.frame {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 5px solid black;
+}
+
+.cursor:hover {
+  cursor: pointer;
+}
+
+.row-mobile {
+  flex-direction:column;
+}
+
+.gif-mobile {
+  margin-bottom: 40px !important;
+  width: 80% !important;
+  height: 80% !important;
+}
+
+
+.selected {
+  /*border-bottom: 3px solid #128fdc !important;*/
+  background: rgba(18, 143, 220, 0.1) !important;
+  border-bottom: 3px solid #128fdc !important;
+
+}
+
+.selected:hover {
+  color: #444 !important;
+}

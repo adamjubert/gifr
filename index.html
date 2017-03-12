@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>gifr | Adam Jubert</title>
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script type="text/javascript" src="domSawyer.js"></script>
+    <script type="text/javascript" src="js/gifr.js"></script>
+  </head>
+  <body onload="addRowOfGifs()">
+    <nav>
+      <div class="wrapper nav-wrapper">
+        <h3>gifr</h3>
+
+        <div class="nav-links">
+          <!-- <form onsubmit="searchForGifs(); return false;">
+            <input type="text" name="" value="" id="search-form">
+              <p>X</p>
+            </input>
+          </form> -->
+          <a href="" class="btn-nav trans">View Source Code</a>
+        </div>
+      </div>
+    </nav>
+
+    <aside>
+      <div class="wrapper actions">
+        <!-- <a onclick="addGif()">Add Gif</a>
+        <a onclick="removeGif()">Remove Gif</a> -->
+        <a onclick="addRowOfGifs()">Add Row</a>
+        <a onclick="removeRow()">Remove Row</a>
+        <a onclick="toggleFrames()" id="action-frames">Toggle Frames</a>
+        <a onclick="toggleClickableGifs()" id="action-clickable">Clickable Gifs</a>
+        <a onclick="toggleMobile()" id="action-mobile">Mobile Friendly</a>
+      </div>
+    </aside>
+
+    <section>
+      <div class="wrapper gif-wrapper">
+        <!-- <div class="row">
+          <img src="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=dog&rating=g" class="gif"/>
+          <img src="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=dog&rating=g" class="gif"/>
+          <img src="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=dog&rating=g" class="gif"/>
+          <img src="http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=dog&rating=g" class="gif"/>
+        </div> -->
+      </div>
+    </section>
+    <div ></div>
+
+  </body>
+</html>
