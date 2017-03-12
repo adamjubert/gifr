@@ -52,7 +52,7 @@ function whichToAdd(item) {
     case 'add':
       return "Sends an AJAX request to the giphy API and appends the received gif to the last child";
     case 'remove':
-      return "Removes the last element with class 'gif' from the screen";
+      return "Removes the last '.row' child element from the screen";
     case 'removeAll':
       return "Removes all elements with class 'row' (and therefore, all gifs) from the screen";
     case 'zoom':
@@ -67,6 +67,9 @@ function whichToAdd(item) {
 }
 
 function removeAllGifs() {
+  if ( $d('.gif').hasClass("gif-mobile") ) { toggleMobile() }
+  if ( $d('.gif').hasClass("cursor") ) { toggleClickableGifs() }
+  if ( $d('.gif').hasClass("zoom") ) { toggleZoom() }
   $d(".row").remove();
 }
 
