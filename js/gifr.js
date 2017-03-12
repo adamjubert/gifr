@@ -29,7 +29,9 @@ function addRowOfGifs() {
 function addSingleGif(tag = "dog") {
   let lastRow = $ds('.gif-wrapper').last();
   if ( lastRow.children().length()  === 4 || lastRow.length() === 0 ) {
-    $ds('.gif-wrapper').append('<div class="row"></div>');
+    $ds('#action-mobile').hasClass("selected") ?
+       $ds('.gif-wrapper').append('<div class="row row-mobile"></div>') :
+       $ds('.gif-wrapper').append('<div class="row"></div>')
   }
   fetchGif(tag);
 }
